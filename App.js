@@ -1,10 +1,15 @@
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StatusBar, StyleSheet, Text, View } from "react-native";
 
 export default function App() {
   return (
-    <View>
-      <Text></Text>
-    </View>
+    <>
+      <StatusBar barStyle="default" />
+
+      <SafeAreaView>
+        <View></View>
+        <Text>@_Tanaka11_</Text>
+      </SafeAreaView>
+    </>
   );
 }
 
