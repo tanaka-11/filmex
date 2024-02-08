@@ -1,7 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
 
-export default function () {
+export default function App() {
   return (
     <View>
       <Text></Text>
@@ -9,4 +8,4 @@ export default function () {
   );
 }
 
-const styles = StyleSheet.create({});
+const estilos = StyleSheet.create({});
