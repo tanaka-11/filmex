@@ -35,31 +35,30 @@ const estilos = StyleSheet.create({
   container: {
     backgroundColor: "yellow",
     flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
   },
-
   viewLogo: {
     backgroundColor: "green",
-    flex: 5,
-    marginHorizontal: 30,
+    flex: 3,
+    width: "80%",
     justifyContent: "flex-end",
     alignItems: "center",
   },
-
   viewBotoes: {
-    flex: 3,
-    justifyContent: "space-evenly",
+    backgroundColor: "orange",
+    flex: 2,
     flexDirection: "row",
     alignItems: "flex-start",
-    backgroundColor: "orange",
-    marginHorizontal: 30,
+    width: "80%",
+    justifyContent: "space-evenly",
   },
-
   viewRodape: {
-    flex: 1,
+    width: "80%",
+    backgroundColor: "red",
+    flex: 0.5,
+    flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    flexDirection: "row",
-    marginHorizontal: 30,
-    backgroundColor: "red",
   },
 });
