@@ -23,12 +23,12 @@ export default function App() {
         </View>
 
         <View style={estilos.viewBotoes}>
-          <Pressable>
-            <Text>Buscar Filmes</Text>
+          <Pressable style={estilos.botao}>
+            <Text style={estilos.textoBotao}>Buscar Filmes</Text>
           </Pressable>
 
-          <Pressable>
-            <Text>Favoritos</Text>
+          <Pressable style={estilos.botao}>
+            <Text style={estilos.textoBotao}>Favoritos</Text>
           </Pressable>
         </View>
 
@@ -69,6 +69,10 @@ const estilos = StyleSheet.create({
     width: "80%",
     justifyContent: "space-evenly",
   },
+
+  botao: {},
+
+  textoBotao: {},
 
   viewRodape: {
     width: "80%",
