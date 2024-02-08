@@ -37,14 +37,13 @@ export default function App() {
 
 const estilos = StyleSheet.create({
   container: {
-    backgroundColor: "yellow",
+    backgroundColor: "lightblue",
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
   },
 
   viewLogo: {
-    backgroundColor: "green",
     flex: 3,
     width: "80%",
     justifyContent: "flex-end",
