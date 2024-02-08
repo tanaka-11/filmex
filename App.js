@@ -38,6 +38,7 @@ const estilos = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+
   viewLogo: {
     backgroundColor: "green",
     flex: 3,
@@ -45,6 +46,7 @@ const estilos = StyleSheet.create({
     justifyContent: "flex-end",
     alignItems: "center",
   },
+
   viewBotoes: {
     backgroundColor: "orange",
     flex: 2,
@@ -53,6 +55,7 @@ const estilos = StyleSheet.create({
     width: "80%",
     justifyContent: "space-evenly",
   },
+
   viewRodape: {
     width: "80%",
     backgroundColor: "red",
