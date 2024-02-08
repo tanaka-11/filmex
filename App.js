@@ -12,17 +12,17 @@ export default function App() {
     <>
       <StatusBar barStyle="default" />
 
-      <SafeAreaView>
-        <View>
+      <SafeAreaView style={estilos.container}>
+        <View style={estilos.viewLogo}>
           <Text>FilmeX</Text>
         </View>
 
-        <View>
+        <View style={estilos.viewBotoes}>
           <Button title="Buscar Filmes" />
           <Button title="Favoritos" />
         </View>
 
-        <View>
+        <View style={estilos.viewRodape}>
           <Button title="Privacidade" />
           <Button title="Sobre o App" />
         </View>
@@ -31,4 +31,12 @@ export default function App() {
   );
 }
 
-const estilos = StyleSheet.create({});
+const estilos = StyleSheet.create({
+  container: {},
+
+  viewLogo: {},
+
+  viewBotoes: {},
+
+  viewRodape: {},
+});
