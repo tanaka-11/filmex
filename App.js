@@ -17,8 +17,8 @@ export default function App() {
 
       <SafeAreaView style={estilos.container}>
         <View style={estilos.viewLogo}>
-          <Text>FilmeX</Text>
           <Image source={logo} style={estilos.logo} />
+          <Text>FilmeX</Text>
         </View>
 
         <View style={estilos.viewBotoes}>
@@ -49,6 +49,11 @@ const estilos = StyleSheet.create({
     width: "80%",
     justifyContent: "flex-end",
     alignItems: "center",
+  },
+
+  logo: {
+    width: 128,
+    height: 128,
   },
 
   viewBotoes: {
