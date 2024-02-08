@@ -62,7 +62,6 @@ const estilos = StyleSheet.create({
   },
 
   viewBotoes: {
-    backgroundColor: "orange",
     flex: 2,
     flexDirection: "row",
     alignItems: "flex-start",
@@ -70,9 +69,18 @@ const estilos = StyleSheet.create({
     justifyContent: "space-evenly",
   },
 
-  botao: {},
+  botao: {
+    backgroundColor: "#5451a6",
+    padding: 12,
+    borderRadius: 10,
+    borderWidth: 2,
+    margin: 10,
+  },
 
-  textoBotao: {},
+  textoBotao: {
+    color: "#fff",
+    fontWeight: "bold",
+  },
 
   viewRodape: {
     width: "80%",
