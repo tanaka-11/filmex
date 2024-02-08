@@ -14,7 +14,7 @@ export default function App() {
 
       <SafeAreaView style={estilos.container}>
         <View style={estilos.viewLogo}>
-          <Text style={estilos.viewTextoLogo}>FilmeX</Text>
+          <Text>FilmeX</Text>
         </View>
 
         <View style={estilos.viewBotoes}>
@@ -39,14 +39,10 @@ const estilos = StyleSheet.create({
 
   viewLogo: {
     backgroundColor: "green",
-    textAlign: "center",
     flex: 5,
     marginHorizontal: 30,
     justifyContent: "flex-end",
-  },
-
-  viewTextoLogo: {
-    textAlign: "center",
+    alignItems: "center",
   },
 
   viewBotoes: {
