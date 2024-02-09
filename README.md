@@ -6,3 +6,4 @@ Aplicativo multiplataforma nativo criado com React Native e Expo.
 
 - Extensão **ES7+** para facilitar a programação dos componentes.
 - Biblioteca de icones: `npm install @expo/vector-icons`
+- Biblioteca de fontes: `npx expo install expo-font` ou **expo google fonts**
