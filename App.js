@@ -12,16 +12,38 @@ import {
 import logo from "./assets/images/logo.png";
 
 import { Ionicons } from "@expo/vector-icons";
+import { useFonts } from "expo-font";
+import { useCallback } from "react";
+import * as SplashScreen from "expo-splash-screen";
+
+// Configuração para manter a tela splash visível
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
+  // Configuração do hook useFonts
+  const [fontsLoaded, fontError] = useFonts({
+    "Monoton-Regular": require("./assets/fonts/Monoton-Regular.ttf"), // Nome da font com o caminho
+  });
+
+  // Função hook useCallback(armazenada na memoria apenas 1 vez) de validação e carregamento da font
+  const aoAtualizarLayout = useCallback(async () => {
+    if (fontsLoaded || fontError) {
+      await SplashScreen.hideAsync(); // Configuração para esconder tela splash
+    }
+  }, [fontsLoaded, fontError]);
+
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
+
   return (
     <>
       <StatusBar barStyle="default" />
-
-      <SafeAreaView style={estilos.container}>
+      {/* Passado evento onLayout com a função callback das fontes */}
+      <SafeAreaView style={estilos.container} onLayout={aoAtualizarLayout}>
         <View style={estilos.viewLogo}>
           <Image source={logo} style={estilos.logo} />
-          <Text>FilmeX</Text>
+          <Text style={estilos.titulo}>Filme-X</Text>
         </View>
 
         <View style={estilos.viewBotoes}>
@@ -67,6 +89,12 @@ const estilos = StyleSheet.create({
   logo: {
     width: 128,
     height: 128,
+  },
+
+  titulo: {
+    fontFamily: "Monoton-Regular",
+    fontSize: 30,
+    color: "#5a51a6",
   },
 
   viewBotoes: {
