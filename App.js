@@ -5,7 +5,7 @@ import Sobre from "./src/screens/Sobre";
 export default function App() {
   return (
     <>
-      <StatusBar barStyle="default" />
+      <StatusBar barStyle="light-content" />
       <Sobre />
       {/* <Home /> */}
     </>

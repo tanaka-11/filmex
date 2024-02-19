@@ -19,15 +19,20 @@ export default function Sobre() {
       <View style={estilos.subContainer}>
         <Text style={estilos.subTitulo}>Sobre o app FILMEX</Text>
 
+        <Text style={estilos.texto}>
+          O <Text style={estilos.nomeApp}>FILMEX</Text> é um aplicativo com a
+          finalidade de permitir a busca por informações sobre filmes existentes
+          na base de dados pública disponibilizada pelo site The Movie Database
+          (TMDb).
+        </Text>
+
         <View style={estilos.viewLogoTmdb}>
-          <Text style={estilos.texto}>
-            O <Text style={estilos.nomeApp}>FILMEX</Text> é um aplicativo com a
-            finalidade de permitir a busca por informações sobre filmes
-            existentes na base de dados pública disponibilizada pelo site The
-            Movie Database (TMDb).
-          </Text>
           <Pressable onPress={aoClicarLink}>
-            <Image source={logoTmdb} style={estilos.logoTmdb} />
+            <Image
+              resizeMode="contain"
+              source={logoTmdb}
+              style={estilos.logoTmdb}
+            />
           </Pressable>
         </View>
 
@@ -43,7 +48,7 @@ export default function Sobre() {
           demanda dos usuários.
         </Text>
 
-        <Text style={estilos.nomeApp}>FILMEX &copy; 2024</Text>
+        <Text style={estilos.textoRodape}>FILMEX &copy; 2024</Text>
       </View>
     </SafeContainer>
   );
@@ -68,21 +73,25 @@ const estilos = StyleSheet.create({
     padding: 10,
   },
 
-  nomeApp: {
+  textoRodape: {
     color: "#db0000",
     fontWeight: "bold",
     textAlign: "center",
+    marginVertical: 20,
+  },
+
+  nomeApp: {
+    color: "#db0000",
+    fontWeight: "bold",
   },
 
   logoTmdb: {
-    width: 185,
-    height: 133,
-    marginTop: 10,
+    width: 150,
+    height: 130,
     marginBottom: 10,
   },
 
   viewLogoTmdb: {
     alignItems: "center",
-    width: "100%",
   },
 });
