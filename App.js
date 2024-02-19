@@ -43,29 +43,38 @@ export default function App() {
       {/* Passado evento onLayout com a função callback das fontes */}
       <SafeAreaView style={estilos.container} onLayout={aoAtualizarLayout}>
         <View style={estilos.viewLogo}>
+          <Text style={estilos.titulo}>Filme</Text>
           <Image source={logo} style={estilos.logo} />
-          <Text style={estilos.titulo}>Filme-X</Text>
         </View>
 
         <View style={estilos.viewBotoes}>
           <Pressable style={estilos.botao}>
             <Text style={estilos.textoBotao}>
-              <Ionicons name="search" size={14} color="white" />
-              Buscar Filmes
+              <Ionicons name="search" size={14} color="white" /> Buscar Filmes
             </Text>
           </Pressable>
 
           <Pressable style={estilos.botao}>
             <Text style={estilos.textoBotao}>
-              <Ionicons name="star" size={14} color="gold" />
-              Favoritos
+              <Ionicons name="star" size={14} color="gold" /> Favoritos
             </Text>
           </Pressable>
         </View>
 
         <View style={estilos.viewRodape}>
-          <Button title="Privacidade" />
-          <Button title="Sobre o App" />
+          <Pressable style={estilos.botaoRodape}>
+            <Text style={estilos.textoBotao}>
+              <Ionicons name="lock-closed" size={14} color="white" />{" "}
+              Privacidade
+            </Text>
+          </Pressable>
+
+          <Pressable style={estilos.botaoRodape}>
+            <Text style={estilos.textoBotao}>
+              <Ionicons name="information-circle" size={14} color="white" />{" "}
+              Sobre
+            </Text>
+          </Pressable>
         </View>
       </SafeAreaView>
     </>
@@ -74,7 +83,7 @@ export default function App() {
 
 const estilos = StyleSheet.create({
   container: {
-    backgroundColor: "#C7B7A3",
+    backgroundColor: "#000",
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
@@ -95,7 +104,7 @@ const estilos = StyleSheet.create({
   titulo: {
     fontFamily: "Oswald-Medium",
     fontSize: 30,
-    color: "#561C24",
+    color: "#db0000",
     textTransform: "uppercase",
   },
 
@@ -108,7 +117,7 @@ const estilos = StyleSheet.create({
   },
 
   botao: {
-    backgroundColor: "#6D2932",
+    backgroundColor: "#c1071e",
     padding: 12,
     borderRadius: 10,
     borderWidth: 2,
@@ -123,10 +132,16 @@ const estilos = StyleSheet.create({
 
   viewRodape: {
     width: "80%",
-    backgroundColor: "red",
+    // backgroundColor: "red",
     flex: 0.5,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    backgroundColor: "#c1071e",
+    width: "100%",
+  },
+
+  botaoRodape: {
+    padding: 14,
   },
 });
