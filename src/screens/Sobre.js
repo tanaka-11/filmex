@@ -27,6 +27,7 @@ export default function Sobre() {
         </Text>
 
         <View style={estilos.viewLogoTmdb}>
+          {/* Utilizado um Pressable com a função "Linking"  */}
           <Pressable onPress={aoClicarLink}>
             <Image
               resizeMode="contain"
