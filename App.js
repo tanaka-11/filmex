@@ -22,7 +22,8 @@ SplashScreen.preventAutoHideAsync();
 export default function App() {
   // Configuração do hook useFonts
   const [fontsLoaded, fontError] = useFonts({
-    "Monoton-Regular": require("./assets/fonts/Monoton-Regular.ttf"), // Nome da font com o caminho
+    "Oswald-Medium": require("./assets/fonts/Oswald-Medium.ttf"), // Nome da font com o caminho
+    Outfit: require("./assets/fonts/Outfit-Regular.ttf"),
   });
 
   // Função hook useCallback(armazenada na memoria apenas 1 vez) de validação e carregamento da font
@@ -73,7 +74,7 @@ export default function App() {
 
 const estilos = StyleSheet.create({
   container: {
-    backgroundColor: "lightblue",
+    backgroundColor: "#C7B7A3",
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
@@ -92,9 +93,10 @@ const estilos = StyleSheet.create({
   },
 
   titulo: {
-    fontFamily: "Monoton-Regular",
+    fontFamily: "Oswald-Medium",
     fontSize: 30,
-    color: "#5a51a6",
+    color: "#561C24",
+    textTransform: "uppercase",
   },
 
   viewBotoes: {
@@ -106,7 +108,7 @@ const estilos = StyleSheet.create({
   },
 
   botao: {
-    backgroundColor: "#5451a6",
+    backgroundColor: "#6D2932",
     padding: 12,
     borderRadius: 10,
     borderWidth: 2,
@@ -116,6 +118,7 @@ const estilos = StyleSheet.create({
   textoBotao: {
     color: "#fff",
     fontWeight: "bold",
+    fontFamily: "Outfit",
   },
 
   viewRodape: {
