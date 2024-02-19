@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <SafeContainer>
       <View style={estilos.viewLogo}>
-        <Text style={estilos.titulo}>Filme-X</Text>
+        <Text style={estilos.titulo}>FilmeX</Text>
         {/* <Image source={logo} style={estilos.logo} /> */}
       </View>
 
@@ -73,11 +73,10 @@ const estilos = StyleSheet.create({
   },
 
   botao: {
-    backgroundColor: "#c1071e",
-    padding: 12,
-    borderRadius: 10,
-    borderWidth: 2,
-    margin: 10,
+    backgroundColor: "#db0000",
+    padding: 16,
+    borderRadius: 6,
+    margin: 20,
   },
 
   textoBotao: {
@@ -93,7 +92,7 @@ const estilos = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     width: "100%",
-    backgroundColor: "#c1071e",
+    backgroundColor: "#db0000",
   },
 
   botaoRodape: {
