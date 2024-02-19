@@ -1,18 +1,35 @@
-import { StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  Linking,
+  Pressable,
+} from "react-native";
 import SafeContainer from "../components/SafeContainer";
+import logoTmdb from "../../assets/images/logo-tmdb.png";
 
 export default function Sobre() {
+  const aoClicarLink = () => {
+    Linking.openURL("https://www.themoviedb.org/?language=pt-BR");
+  };
+
   return (
     <SafeContainer>
       <View style={estilos.subContainer}>
         <Text style={estilos.subTitulo}>Sobre o app FILMEX</Text>
 
-        <Text style={estilos.texto}>
-          O <Text style={estilos.nomeApp}>FILMEX</Text> é um aplicativo com a
-          finalidade de permitir a busca por informações sobre filmes existentes
-          na base de dados pública disponibilizada pelo site The Movie Database
-          (TMDb).
-        </Text>
+        <View style={estilos.viewLogoTmdb}>
+          <Text style={estilos.texto}>
+            O <Text style={estilos.nomeApp}>FILMEX</Text> é um aplicativo com a
+            finalidade de permitir a busca por informações sobre filmes
+            existentes na base de dados pública disponibilizada pelo site The
+            Movie Database (TMDb).
+          </Text>
+          <Pressable onPress={aoClicarLink}>
+            <Image source={logoTmdb} style={estilos.logoTmdb} />
+          </Pressable>
+        </View>
 
         <Text style={estilos.texto}>
           Ao localizar um filme, o usuário pode visualizar informações como
@@ -48,10 +65,24 @@ const estilos = StyleSheet.create({
 
   texto: {
     color: "#FFF",
+    padding: 10,
   },
 
   nomeApp: {
     color: "#db0000",
     fontWeight: "bold",
+    textAlign: "center",
+  },
+
+  logoTmdb: {
+    width: 185,
+    height: 133,
+    marginTop: 10,
+    marginBottom: 10,
+  },
+
+  viewLogoTmdb: {
+    alignItems: "center",
+    width: "100%",
   },
 });
