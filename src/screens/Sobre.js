@@ -5,6 +5,7 @@ import {
   View,
   Linking,
   Pressable,
+  ScrollView,
 } from "react-native";
 import SafeContainer from "../components/SafeContainer";
 import logoTmdb from "../../assets/images/logo-tmdb.png";
@@ -17,39 +18,42 @@ export default function Sobre() {
   return (
     <SafeContainer>
       <View style={estilos.subContainer}>
-        <Text style={estilos.subTitulo}>Sobre o app FILMEX</Text>
+        {/* View que permite a rolagem de página */}
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <Text style={estilos.subTitulo}>Sobre o app FILMEX</Text>
 
-        <Text style={estilos.texto}>
-          O <Text style={estilos.nomeApp}>FILMEX</Text> é um aplicativo com a
-          finalidade de permitir a busca por informações sobre filmes existentes
-          na base de dados pública disponibilizada pelo site The Movie Database
-          (TMDb).
-        </Text>
+          <Text style={estilos.texto}>
+            O <Text style={estilos.nomeApp}>FILMEX</Text> é um aplicativo com a
+            finalidade de permitir a busca por informações sobre filmes
+            existentes na base de dados pública disponibilizada pelo site The
+            Movie Database (TMDb).
+          </Text>
 
-        <View style={estilos.viewLogoTmdb}>
-          {/* Utilizado um Pressable com a função "Linking"  */}
-          <Pressable onPress={aoClicarLink}>
-            <Image
-              resizeMode="contain"
-              source={logoTmdb}
-              style={estilos.logoTmdb}
-            />
-          </Pressable>
-        </View>
+          <View style={estilos.viewLogoTmdb}>
+            {/* Utilizado um Pressable com a função "Linking"  */}
+            <Pressable onPress={aoClicarLink}>
+              <Image
+                resizeMode="contain"
+                source={logoTmdb}
+                style={estilos.logoTmdb}
+              />
+            </Pressable>
+          </View>
 
-        <Text style={estilos.texto}>
-          Ao localizar um filme, o usuário pode visualizar informações como
-          título, data de lançamento, nota média de avaliação e uma breve
-          descrição sobre o filme e, caso queira, salvar estas informações em
-          uma lista no próprio aplicativo para visualização posterior.
-        </Text>
+          <Text style={estilos.texto}>
+            Ao localizar um filme, o usuário pode visualizar informações como
+            título, data de lançamento, nota média de avaliação e uma breve
+            descrição sobre o filme e, caso queira, salvar estas informações em
+            uma lista no próprio aplicativo para visualização posterior.
+          </Text>
 
-        <Text style={estilos.texto}>
-          O aplicativo poderá receber novos recursos conforme o feedback e
-          demanda dos usuários.
-        </Text>
+          <Text style={estilos.texto}>
+            O aplicativo poderá receber novos recursos conforme o feedback e
+            demanda dos usuários.
+          </Text>
 
-        <Text style={estilos.textoRodape}>FILMEX &copy; 2024</Text>
+          <Text style={estilos.textoRodape}>FILMEX &copy; 2024</Text>
+        </ScrollView>
       </View>
     </SafeContainer>
   );
