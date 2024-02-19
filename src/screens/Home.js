@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <SafeContainer>
       <View style={estilos.viewLogo}>
-        <Text style={estilos.titulo}>Filme</Text>
-        <Image source={logo} style={estilos.logo} />
+        <Text style={estilos.titulo}>Filme-X</Text>
+        {/* <Image source={logo} style={estilos.logo} /> */}
       </View>
 
       <View style={estilos.viewBotoes}>
@@ -59,7 +59,7 @@ const estilos = StyleSheet.create({
 
   titulo: {
     fontFamily: "Oswald-Medium",
-    fontSize: 30,
+    fontSize: 90,
     color: "#db0000",
     textTransform: "uppercase",
   },
