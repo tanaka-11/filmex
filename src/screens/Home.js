@@ -60,7 +60,7 @@ const estilos = StyleSheet.create({
   titulo: {
     fontFamily: "Oswald-Medium",
     fontSize: 90,
-    color: "#db0000",
+    color: "#e42233",
     textTransform: "uppercase",
   },
 
@@ -73,7 +73,7 @@ const estilos = StyleSheet.create({
   },
 
   botao: {
-    backgroundColor: "#db0000",
+    backgroundColor: "#e42233",
     padding: 14,
     borderRadius: 6,
     margin: 20,
@@ -94,7 +94,7 @@ const estilos = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     width: "100%",
-    backgroundColor: "#db0000",
+    backgroundColor: "#e42233",
   },
 
   botaoRodape: {

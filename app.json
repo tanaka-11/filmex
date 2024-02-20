@@ -4,27 +4,23 @@
     "slug": "filmex",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/dahora.png",
+    "icon": "./assets/images/logo.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/images/splash-dahora.png",
       "resizeMode": "contain",
       "backgroundColor": "#000"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-dahora.png",
+        "foregroundImage": "./assets/images/logo.png",
         "backgroundColor": "#000"
       }
     },
-    "plugins": [
-      "expo-font"
-    ]
+    "plugins": ["expo-font"]
   }
 }
