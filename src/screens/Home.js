@@ -16,13 +16,13 @@ export default function Home() {
       <View style={estilos.viewBotoes}>
         <Pressable style={estilos.botao}>
           <Text style={estilos.textoBotao}>
-            <Ionicons name="search" size={14} color="white" /> Buscar Filmes
+            <Ionicons name="search" size={10} color="white" /> Buscar Filmes
           </Text>
         </Pressable>
 
         <Pressable style={estilos.botao}>
           <Text style={estilos.textoBotao}>
-            <Ionicons name="star" size={14} color="gold" /> Favoritos
+            <Ionicons name="star" size={10} color="gold" /> Favoritos
           </Text>
         </Pressable>
       </View>
@@ -30,13 +30,13 @@ export default function Home() {
       <View style={estilos.viewRodape}>
         <Pressable style={estilos.botaoRodape}>
           <Text style={estilos.textoBotao}>
-            <Ionicons name="lock-closed" size={14} color="white" /> Privacidade
+            <Ionicons name="lock-closed" size={10} color="white" /> Privacidade
           </Text>
         </Pressable>
 
         <Pressable style={estilos.botaoRodape}>
           <Text style={estilos.textoBotao}>
-            <Ionicons name="information-circle" size={14} color="white" /> Sobre
+            <Ionicons name="information-circle" size={10} color="white" /> Sobre
           </Text>
         </Pressable>
       </View>
@@ -46,7 +46,7 @@ export default function Home() {
 
 const estilos = StyleSheet.create({
   viewLogo: {
-    flex: 3,
+    flex: 2.5,
     width: "80%",
     justifyContent: "flex-end",
     alignItems: "center",
@@ -74,19 +74,21 @@ const estilos = StyleSheet.create({
 
   botao: {
     backgroundColor: "#db0000",
-    padding: 16,
+    padding: 14,
     borderRadius: 6,
     margin: 20,
+    alignItems: "center",
+    justifyContent: "center",
   },
 
   textoBotao: {
     color: "#fff",
     fontWeight: "bold",
     fontFamily: "Outfit",
+    textAlign: "center",
   },
 
   viewRodape: {
-    width: "80%",
     flex: 0.5,
     flexDirection: "row",
     justifyContent: "space-between",
@@ -96,6 +98,6 @@ const estilos = StyleSheet.create({
   },
 
   botaoRodape: {
-    padding: 14,
+    padding: 20,
   },
 });
