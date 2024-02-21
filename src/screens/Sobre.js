@@ -66,7 +66,7 @@ const estilos = StyleSheet.create({
   },
 
   subTitulo: {
-    color: "#e42233",
+    color: "#db0000",
     fontFamily: "Outfit",
     fontWeight: "bold",
     marginVertical: 10,
@@ -79,14 +79,14 @@ const estilos = StyleSheet.create({
   },
 
   textoRodape: {
-    color: "#e42233",
+    color: "#db0000",
     fontWeight: "bold",
     textAlign: "center",
     marginVertical: 20,
   },
 
   nomeApp: {
-    color: "#e42233",
+    color: "#db0000",
     fontWeight: "bold",
   },
 

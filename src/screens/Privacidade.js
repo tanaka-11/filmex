@@ -107,14 +107,14 @@ const estilos = StyleSheet.create({
     fontSize: 16,
     marginVertical: 8,
     margin: 20,
-    color: "#e42233",
+    color: "#db0000",
   },
 
   subtitulo: {
     fontWeight: "bold",
     fontSize: 14,
     marginVertical: 8,
-    color: "#e42233",
+    color: "#db0000",
     margin: 20,
   },
 
@@ -125,7 +125,7 @@ const estilos = StyleSheet.create({
   },
 
   destaque: {
-    color: "#e42233",
+    color: "#db0000",
     fontWeight: "bold",
   },
 });
