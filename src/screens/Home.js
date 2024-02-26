@@ -13,7 +13,8 @@ import background from "../../assets/images/Tela-Home.jpeg";
 import { Ionicons } from "@expo/vector-icons";
 import SafeContainer from "../components/SafeContainer";
 
-export default function Home() {
+// Passado props da biblioteca de navegação dentro do componente
+export default function Home({ navigation }) {
   return (
     <SafeContainer>
       <ImageBackground
@@ -41,13 +42,20 @@ export default function Home() {
         </View>
 
         <View style={estilos.viewRodape}>
-          <Pressable style={estilos.botaoRodape}>
+          {/* Passando uma arrow function com a props.navigate e o nome da tela */}
+          <Pressable
+            onPress={() => navigation.navigate("Privacidade")}
+            style={estilos.botaoRodape}
+          >
             <Text style={estilos.textoBotao}>
               <Ionicons name="lock-closed" size={10} color="red" /> Privacidade
             </Text>
           </Pressable>
 
-          <Pressable style={estilos.botaoRodape}>
+          <Pressable
+            onPress={() => navigation.navigate("Sobre")}
+            style={estilos.botaoRodape}
+          >
             <Text style={estilos.textoBotao}>
               <Ionicons name="information-circle" size={10} color="red" /> Sobre
             </Text>
