@@ -41,3 +41,7 @@ Mais detalhes nas documentações
 - `npx expo install react-native-screens react-native-safe-area-context`
 
 - Mecanismo de navegação: `npm install @react-navigation/native-stack`
+
+#### Programação utilizada:
+
+No `App.js` fizemos a importação do `NavigationContainer` e `createNativeStackNavigator`, em seguida os configuramos para determinar as telas `Stack.Screen` e seus componentes correspondentes (Home, Privacidade e Sobre).
