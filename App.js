@@ -17,8 +17,25 @@ export default function App() {
 
       {/*  Programação da biblioteca de navegação utilizando metodo Stack*/}
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Home" component={Home} />
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen
+            name="Home"
+            component={Home} // Nome da tela
+            options={{ headerShown: false }} // Escondendo o cabeçalho criado automaticamente pelo método Stack
+          />
+
+          {/* Restante das Telas */}
+          <Stack.Screen
+            name="Sobre"
+            component={Sobre}
+            options={{ headerShown: false }}
+          />
+
+          <Stack.Screen
+            name="Privacidade"
+            component={Privacidade}
+            options={{ headerShown: false }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>
