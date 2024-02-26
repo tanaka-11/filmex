@@ -40,6 +40,4 @@ Mais detalhes nas documentações
 
 - `npx expo install react-native-screens react-native-safe-area-context`
 
-- `npm install @react-navigation/native-stack`
-
 - Mecanismo de navegação: `npm install @react-navigation/native-stack`
