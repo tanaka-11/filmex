@@ -17,7 +17,14 @@ export default function App() {
 
       {/*  Programação da biblioteca de navegação utilizando metodo Stack*/}
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home">
+        <Stack.Navigator
+          initialRouteName="Home"
+          // Estilizando o cabecalho criado de voltar
+          screenOptions={{
+            headerStyle: { backgroundColor: "#000" }, // Parametro
+            headerTintColor: "#db0000",
+          }}
+        >
           <Stack.Screen
             name="Home"
             component={Home} // Nome da tela
@@ -25,16 +32,12 @@ export default function App() {
           />
 
           {/* Restante das Telas */}
-          <Stack.Screen
-            name="Sobre"
-            component={Sobre}
-            options={{ headerShown: false }}
-          />
+          <Stack.Screen name="Sobre" component={Sobre} />
 
           <Stack.Screen
             name="Privacidade"
             component={Privacidade}
-            options={{ headerShown: false }}
+            options={{ title: "Politica de Privacidade" }}
           />
         </Stack.Navigator>
       </NavigationContainer>
