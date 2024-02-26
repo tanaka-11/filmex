@@ -1,4 +1,12 @@
-import { Button, StyleSheet, Text, View, TextInput, Alert } from "react-native";
+import {
+  Button,
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Alert,
+  Pressable,
+} from "react-native";
 import React from "react";
 import { useState } from "react";
 import SafeContainer from "../components/SafeContainer";
@@ -9,30 +17,87 @@ export default function BuscarFilmes() {
 
   // Botão com Alert
   const aoPressionarProcurar = () => {
-    Alert.alert(filmeDigitado);
+    if (filmeDigitado.trim() === "") {
+      Alert.alert("Digite o nome de um filme antes de procurar.");
+    } else {
+      Alert.alert(filmeDigitado);
+    }
   };
 
   return (
     <SafeContainer>
-      <View>
-        <Text>O poderoso Chefão? Percy Jackson? Harry Potter?</Text>
-        <Text>Localize um filme que você viu ou gostaria de ver!</Text>
+      <View style={estilos.background}>
+        <Text style={estilos.texto}>
+          O poderoso Chefão? Percy Jackson? Harry Potter?
+        </Text>
+        <Text style={estilos.texto}>
+          Localize um filme que você viu ou gostaria de ver!
+        </Text>
+      </View>
+
+      <View style={estilos.buscador}>
         <TextInput
           style={estilos.input}
           placeholder="Digite o filme"
-          onChangeText={(text) => setFilmeDigitado(text)}
+          placeholderTextColor="white"
+          returnKeyType="search"
+          onChangeText={(novoTexto) => setFilmeDigitado(novoTexto)}
+          onSubmitEditing={aoPressionarProcurar}
         />
+
+        <Pressable onPress={aoPressionarProcurar} style={estilos.botaoBuscar}>
+          <Text style={estilos.textoBotao}>Procurar</Text>
+        </Pressable>
       </View>
 
-      <View>
-        <Button title="Procurar" onPress={aoPressionarProcurar} />
-      </View>
+      <Text style={estilos.textoRodape}>FILMEX &copy; 2024</Text>
     </SafeContainer>
   );
 }
 
 const estilos = StyleSheet.create({
+  background: {
+    flex: 1,
+  },
+
   input: {
+    color: "#db0000",
+    fontWeight: "bold",
+    borderColor: "#db0000",
+    borderWidth: 1,
+    padding: 10,
+    margin: 10,
+    width: 250,
+    textAlign: "center",
+  },
+
+  buscador: {
+    flex: 4,
+    alignItems: "center",
+  },
+
+  texto: {
     color: "white",
+  },
+
+  textoBotao: {
+    color: "white",
+    textTransform: "uppercase",
+    textAlign: "center",
+    margin: 10,
+  },
+
+  textoRodape: {
+    color: "#db0000",
+    fontWeight: "bold",
+    textAlign: "center",
+    marginVertical: 20,
+  },
+
+  botaoBuscar: {
+    backgroundColor: "#db0000",
+    width: 100,
+    height: 40,
+    borderRadius: 6,
   },
 });

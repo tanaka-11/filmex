@@ -85,7 +85,7 @@ const estilos = StyleSheet.create({
   titulo: {
     fontFamily: "Oswald-Medium",
     fontSize: 90,
-    color: "#e42233",
+    color: "#db0000",
     textTransform: "uppercase",
   },
 
