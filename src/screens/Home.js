@@ -79,7 +79,7 @@ const estilos = StyleSheet.create({
   },
 
   viewBotoes: {
-    flex: 0.8,
+    flex: 1,
     flexDirection: "row",
     alignItems: "flex-start",
     width: "100%",
@@ -88,7 +88,7 @@ const estilos = StyleSheet.create({
 
   botao: {
     backgroundColor: "#db0000",
-    padding: 10,
+    padding: 16,
     borderRadius: 6,
     margin: 20,
     alignItems: "center",

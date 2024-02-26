@@ -105,9 +105,10 @@ const estilos = StyleSheet.create({
   titulo: {
     fontWeight: "bold",
     fontSize: 16,
-    marginVertical: 8,
+    marginVertical: 20,
     margin: 20,
     color: "#db0000",
+    marginTop: 40,
   },
 
   subtitulo: {
