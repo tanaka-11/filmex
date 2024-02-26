@@ -37,7 +37,7 @@ export default function App() {
           <Stack.Screen
             name="Privacidade"
             component={Privacidade}
-            options={{ title: "Politica de Privacidade" }}
+            options={{ title: "Política de Privacidade" }} // Mudando o nome no cabeçalho criado
           />
         </Stack.Navigator>
       </NavigationContainer>
