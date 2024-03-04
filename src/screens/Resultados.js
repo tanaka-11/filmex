@@ -1,7 +1,9 @@
 import { StyleSheet, Text, View } from "react-native";
 import SafeContainer from "../components/SafeContainer";
 
-export default function Resultados() {
+// Utilizando a props "route" da biblioteca de navegação
+export default function Resultados({ route }) {
+  console.log(route.params.filme);
   return (
     <SafeContainer>
       <View style={estilos.subContainer}>

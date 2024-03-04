@@ -12,7 +12,7 @@ import { useState } from "react";
 import SafeContainer from "../components/SafeContainer";
 import { Ionicons } from "@expo/vector-icons";
 
-export default function BuscarFilmes() {
+export default function BuscarFilmes({ navigation }) {
   // State para a busca
   const [filme, setFilme] = useState("");
 
@@ -29,9 +29,10 @@ export default function BuscarFilmes() {
         "Ops!",
         "Digite o nome de um filme antes de procurar."
       );
-    } else {
-      Alert.alert("Você procurou por:", filme);
     }
+
+    // Redirecionando para a tela de resultados com o filme que foi digitado atraves da props "navigation" e uso do state passado como um objeto onde o filme fica armazenado.
+    navigation.navigate("Resultados", { filme });
   };
 
   return (
