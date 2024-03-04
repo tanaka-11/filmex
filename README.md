@@ -10,6 +10,8 @@ Aplicativo multiplataforma nativo criado com React Native e Expo.
 - **Biblioteca de SplashScreen:** `npx expo install expo-splash-screen`
 - **Biblioteca de Navegação:** `npm install @react-navigation/native`
 
+---
+
 ## Como utilizar as fontes adicionais
 
 - Download do arquivo de font (Formato TTF ou OTF)
@@ -22,6 +24,8 @@ Mais detalhes na documentação do Expo Fonts no link
 - **https://docs.expo.dev/versions/latest/sdk/font/**
 
 - **https://docs.expo.dev/versions/latest/sdk/splash-screen/**
+
+---
 
 ## Gerenciamento dos recursos de navegação
 
@@ -45,3 +49,11 @@ Mais detalhes nas documentações
 #### Programação utilizada:
 
 No `App.js` fizemos a importação do `NavigationContainer` e `createNativeStackNavigator`, em seguida os configuramos para determinar as telas `Stack.Screen` e seus componentes correspondentes (Home, Privacidade e Sobre).
+
+---
+
+## Eventos de busca
+
+- `onChangeText` no `TextInput` para captura em tempo real do nome do filme digitado e sua atualização no `state` utilizando a função `filmeDigitado`.
+- `onPress` no `Pressable` para acionamento da função `aoPressionarProcurar`
+- `OnSubmitEditing` no `TextInput` para tambem acionamento da função `aoPressionarProcurar`
