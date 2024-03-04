@@ -10,6 +10,7 @@ import {
 
 import { useState } from "react";
 import SafeContainer from "../components/SafeContainer";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function BuscarFilmes() {
   // State para a busca
@@ -38,10 +39,13 @@ export default function BuscarFilmes() {
         </View>
 
         <View style={estilos.buscador}>
+          {/* <Ionicons name="film" size={44} color="#db0000" /> */}
           <TextInput
             style={estilos.input}
             placeholder="Digite o filme"
             placeholderTextColor="white"
+            maxLength={30}
+            autoFocus
             returnKeyType="search"
             onChangeText={(novoTexto) => setFilmeDigitado(novoTexto)}
             onSubmitEditing={aoPressionarProcurar}
@@ -90,17 +94,17 @@ const estilos = StyleSheet.create({
     margin: 10,
   },
 
-  textoRodape: {
-    color: "#db0000",
-    fontWeight: "bold",
-    textAlign: "center",
-    marginVertical: 20,
-  },
-
   botaoBuscar: {
     backgroundColor: "#db0000",
     width: 100,
     height: 40,
     borderRadius: 6,
+  },
+
+  textoRodape: {
+    color: "#db0000",
+    fontWeight: "bold",
+    textAlign: "center",
+    marginVertical: 20,
   },
 });
