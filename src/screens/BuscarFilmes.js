@@ -7,7 +7,7 @@ import {
   Pressable,
   Vibration,
 } from "react-native";
-import React from "react";
+
 import { useState } from "react";
 import SafeContainer from "../components/SafeContainer";
 
@@ -27,31 +27,33 @@ export default function BuscarFilmes() {
 
   return (
     <SafeContainer>
-      <View style={estilos.background}>
-        <Text style={estilos.texto}>
-          O poderoso Chefão? Percy Jackson? Harry Potter?
-        </Text>
-        <Text style={estilos.texto}>
-          Localize um filme que você viu ou gostaria de ver!
-        </Text>
+      <View style={estilos.subContainer}>
+        <View style={estilos.background}>
+          <Text style={estilos.texto}>
+            O poderoso Chefão? Percy Jackson? Harry Potter?
+          </Text>
+          <Text style={estilos.texto}>
+            Localize um filme que você viu ou gostaria de ver!
+          </Text>
+        </View>
+
+        <View style={estilos.buscador}>
+          <TextInput
+            style={estilos.input}
+            placeholder="Digite o filme"
+            placeholderTextColor="white"
+            returnKeyType="search"
+            onChangeText={(novoTexto) => setFilmeDigitado(novoTexto)}
+            onSubmitEditing={aoPressionarProcurar}
+          />
+
+          <Pressable onPress={aoPressionarProcurar} style={estilos.botaoBuscar}>
+            <Text style={estilos.textoBotao}>Procurar</Text>
+          </Pressable>
+        </View>
+
+        <Text style={estilos.textoRodape}>FILMEX &copy; 2024</Text>
       </View>
-
-      <View style={estilos.buscador}>
-        <TextInput
-          style={estilos.input}
-          placeholder="Digite o filme"
-          placeholderTextColor="white"
-          returnKeyType="search"
-          onChangeText={(novoTexto) => setFilmeDigitado(novoTexto)}
-          onSubmitEditing={aoPressionarProcurar}
-        />
-
-        <Pressable onPress={aoPressionarProcurar} style={estilos.botaoBuscar}>
-          <Text style={estilos.textoBotao}>Procurar</Text>
-        </Pressable>
-      </View>
-
-      <Text style={estilos.textoRodape}>FILMEX &copy; 2024</Text>
     </SafeContainer>
   );
 }
