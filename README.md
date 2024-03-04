@@ -9,6 +9,7 @@ Aplicativo multiplataforma nativo criado com React Native e Expo.
 - **Biblioteca de Fontes:** `npx expo install expo-font` ou **_expo google fonts_**
 - **Biblioteca de SplashScreen:** `npx expo install expo-splash-screen`
 - **Biblioteca de Navegação:** `npm install @react-navigation/native`
+- **Biblioteca para Fetch com Promisses:** `npm install axios`
 
 ---
 
