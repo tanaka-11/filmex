@@ -14,15 +14,23 @@ import { Ionicons } from "@expo/vector-icons";
 
 export default function BuscarFilmes() {
   // State para a busca
-  const [filmeDigitado, setFilmeDigitado] = useState("");
+  const [filme, setFilme] = useState("");
+
+  // Função que captura o texto digitado
+  const filmeDigitado = (valorDigitado) => {
+    setFilme(valorDigitado);
+  };
 
   // Botão com Alert
   const aoPressionarProcurar = () => {
-    if (filmeDigitado.trim() === "") {
-      Alert.alert("Digite o nome de um filme antes de procurar.");
+    if (!filme) {
       Vibration.vibrate(300);
+      return Alert.alert(
+        "Ops!",
+        "Digite o nome de um filme antes de procurar."
+      );
     } else {
-      Alert.alert(filmeDigitado);
+      Alert.alert("Você procurou por:", filme);
     }
   };
 
@@ -47,7 +55,7 @@ export default function BuscarFilmes() {
             maxLength={30}
             autoFocus
             returnKeyType="search"
-            onChangeText={(novoTexto) => setFilmeDigitado(novoTexto)}
+            onChangeText={filmeDigitado}
             onSubmitEditing={aoPressionarProcurar}
           />
 
