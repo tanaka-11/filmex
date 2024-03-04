@@ -1,13 +1,17 @@
 import { StyleSheet, Text, View } from "react-native";
 import SafeContainer from "../components/SafeContainer";
 
-// Utilizando a props "route" da biblioteca de navegação
+// Utilizando a props nativa "route" da biblioteca de navegação. Utilizada para acessar valores passados por meio de navegação entre telas.
 export default function Resultados({ route }) {
-  console.log(route.params.filme);
+  // Capturando o parametro filme vindo da função "aoPressionarProcurar"
+  const { filme } = route.params;
+
   return (
     <SafeContainer>
       <View style={estilos.subContainer}>
-        <Text style={estilos.texto}>Você buscou por: </Text>
+        <Text style={estilos.texto}>
+          Você buscou por: <Text style={estilos.nomeFilme}> {filme}</Text>
+        </Text>
 
         <Text style={estilos.textoRodape}>FILMEX &copy; 2024</Text>
       </View>
@@ -32,6 +36,11 @@ const estilos = StyleSheet.create({
   texto: {
     color: "#FFF",
     padding: 10,
+  },
+
+  nomeFilme: {
+    color: "#db0000",
+    fontWeight: "bold",
   },
 
   textoRodape: {
