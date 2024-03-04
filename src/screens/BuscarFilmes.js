@@ -1,11 +1,11 @@
 import {
-  Button,
   StyleSheet,
   Text,
   View,
   TextInput,
   Alert,
   Pressable,
+  Vibration,
 } from "react-native";
 import React from "react";
 import { useState } from "react";
@@ -19,6 +19,7 @@ export default function BuscarFilmes() {
   const aoPressionarProcurar = () => {
     if (filmeDigitado.trim() === "") {
       Alert.alert("Digite o nome de um filme antes de procurar.");
+      Vibration.vibrate(300);
     } else {
       Alert.alert(filmeDigitado);
     }
