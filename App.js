@@ -32,7 +32,6 @@ export default function App() {
             options={{ headerShown: false }} // Escondendo o cabeçalho criado automaticamente pelo método Stack
           />
 
-          {/* Restante das Telas */}
           <Stack.Screen name="Sobre" component={Sobre} />
 
           <Stack.Screen
