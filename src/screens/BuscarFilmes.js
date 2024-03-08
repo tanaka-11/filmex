@@ -77,7 +77,7 @@ const estilos = StyleSheet.create({
   },
 
   input: {
-    color: "#db0000",
+    color: "#fff",
     fontWeight: "bold",
     borderColor: "#db0000",
     borderWidth: 1,
