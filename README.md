@@ -57,6 +57,12 @@ No `App.js` fizemos a importação do `NavigationContainer` e `createNativeStack
 
 ### Consumo de dados com a api e axios
 
+- Cadastro na API TheMovieDB
+- Criação de uma chave de API (API Key)
+- Configuração de variável ambiente através do arquivo .env contendo a API Key via Expo. (arquivo ENV são ignorados no versionamento)
+
+---
+
 - Instalação da lib **Axios**
 - Configuração do `services/api-moviedb.js` contendo a programação de acesso da API para uso no aplicativo
 
