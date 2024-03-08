@@ -33,7 +33,7 @@ const estilos = StyleSheet.create({
 
   rodape: {
     justifyContent: "flex-end",
-    marginTop: 160,
+    // marginTop: 160,
   },
 
   subContainer: {
