@@ -71,3 +71,8 @@ No `App.js` fizemos a importação do `NavigationContainer` e `createNativeStack
 - `onChangeText` no `TextInput` para captura em tempo real do nome do filme digitado e sua atualização no `state` utilizando a função `filmeDigitado`.
 - `onPress` no `Pressable` para acionamento da função `aoPressionarProcurar`
 - `OnSubmitEditing` no `TextInput` para tambem acionamento da função `aoPressionarProcurar`
+
+### Exibição dos resultados
+
+- Utilização do componente `FlatList` para listagem dinâmica dos resultados
+- Criação do componente `CardFilme` com uso da props (`filme`) com carregamento do `title` e do `poster_path` (imagem) de cada filme
