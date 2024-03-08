@@ -37,6 +37,7 @@ const estilos = StyleSheet.create({
     fontSize: 16,
     backgroundColor: "#db0000",
     fontWeight: "bold",
+    padding: 6,
   },
 
   textoBotao: {
