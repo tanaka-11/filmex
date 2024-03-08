@@ -8,7 +8,7 @@ export default function CardFilme({ filme }) {
   return (
     <View style={estilos.card}>
       <Image
-        resizeMode="stretch"
+        resizeMode="contain"
         style={estilos.imagem}
         source={{ uri: `https://image.tmdb.org/t/p/w500/${poster_path}` }}
       />
@@ -39,7 +39,7 @@ const estilos = StyleSheet.create({
   },
 
   textoBotao: {
-    color: "#db0000",
+    color: "#fff",
     fontSize: 12,
     textTransform: "uppercase",
   },
@@ -51,6 +51,7 @@ const estilos = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    borderRadius: 6,
   },
 
   imagem: {
@@ -72,7 +73,7 @@ const estilos = StyleSheet.create({
     borderColor: "#db0000",
     borderWidth: 1,
     borderRadius: 4,
-    padding: 10,
+    padding: 6,
     margin: 2,
   },
 });
