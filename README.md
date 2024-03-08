@@ -53,7 +53,14 @@ No `App.js` fizemos a importação do `NavigationContainer` e `createNativeStack
 
 ---
 
-## Eventos de busca
+## Eventos de busca com a biblioteca axios
+
+### Consumo de dados com a api e axios
+
+- Instalação da lib **Axios**
+- Configuração do `services/api-moviedb.js` contendo a programação de acesso da API para uso no aplicativo
+
+---
 
 - `onChangeText` no `TextInput` para captura em tempo real do nome do filme digitado e sua atualização no `state` utilizando a função `filmeDigitado`.
 - `onPress` no `Pressable` para acionamento da função `aoPressionarProcurar`
