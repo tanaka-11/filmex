@@ -2,6 +2,8 @@ import { StyleSheet, Text, View, FlatList } from "react-native";
 import { useEffect, useState } from "react";
 import SafeContainer from "../components/SafeContainer";
 import CardFilme from "../components/CardFilme";
+import Separador from "../components/Separador";
+import ListaVazia from "../components/ListaVazia";
 import { api, apiKey } from "../services/api-moviedb";
 useEffect;
 
@@ -49,12 +51,8 @@ export default function Resultados({ route }) {
             renderItem={({ item }) => {
               return <CardFilme filme={item} />;
             }} // renderização do item
-            ListEmptyComponent={() => (
-              <Text style={estilos.textoRodape}>Nenhum filme encontrado</Text>
-            )} // componente para lista vazia
-            // ItemSeparatorComponent={() => (
-            //   <Text style={estilos.texto}>******</Text>
-            // )} // separador de componente
+            ListEmptyComponent={ListaVazia} // componente para lista vazia
+            ItemSeparatorComponent={Separador} // separador de componente
           />
         </View>
 
@@ -80,12 +78,14 @@ const estilos = StyleSheet.create({
 
   texto: {
     color: "#FFF",
+    textAlign: "center",
   },
 
   nomeFilme: {
     color: "#db0000",
     fontWeight: "bold",
     textTransform: "capitalize",
+    textDecorationLine: "underline",
   },
 
   viewFilmes: {
