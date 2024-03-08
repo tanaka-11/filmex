@@ -1,6 +1,7 @@
+import { StyleSheet, Text, View, FlatList } from "react-native";
 import { useEffect, useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
 import SafeContainer from "../components/SafeContainer";
+import CardFilme from "../components/CardFilme";
 import { api, apiKey } from "../services/api-moviedb";
 useEffect;
 
@@ -24,11 +25,13 @@ export default function Resultados({ route }) {
             api_key: apiKey,
           },
         }); // Endpoint com Parametros
-        console.log(resposta.data.results);
+
+        setResultados(resposta.data.results); // Adicionando a respota da api no state
       } catch (error) {
         console.error("ERRO: " + error.message);
       }
     }
+
     buscarFilmes();
   }, []);
 
@@ -38,6 +41,16 @@ export default function Resultados({ route }) {
         <Text style={estilos.texto}>
           Você buscou por: <Text style={estilos.nomeFilme}> {filme}</Text>
         </Text>
+
+        <View style={estilos.viewFilmes}>
+          <FlatList
+            data={resultados} // dados armazenados no state
+            keyExtractor={(item) => item.id} // identificador
+            renderItem={({ item }) => {
+              return <CardFilme filme={item} />;
+            }} // renderizando o item
+          />
+        </View>
 
         <Text style={estilos.textoRodape}>FILMEX &copy; 2024</Text>
       </View>
@@ -61,13 +74,16 @@ const estilos = StyleSheet.create({
 
   texto: {
     color: "#FFF",
-    padding: 10,
   },
 
   nomeFilme: {
     color: "#db0000",
     fontWeight: "bold",
     textTransform: "capitalize",
+  },
+
+  viewFilmes: {
+    margin: 10,
   },
 
   textoRodape: {
