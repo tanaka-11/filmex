@@ -52,7 +52,7 @@ export default function Resultados({ route }) {
               return <CardFilme filme={item} />;
             }} // renderização do item
             ListEmptyComponent={ListaVazia} // componente para lista vazia
-            ItemSeparatorComponent={Separador} // separador de componente
+            // ItemSeparatorComponent={Separador} // separador de componente
           />
         </View>
 
@@ -78,7 +78,6 @@ const estilos = StyleSheet.create({
 
   texto: {
     color: "#FFF",
-    textAlign: "center",
   },
 
   nomeFilme: {
