@@ -47,7 +47,7 @@ export default function Resultados({ route }) {
             data={resultados} // dados armazenados no state
             keyExtractor={(item) => item.id} // identificador
             renderItem={({ item }) => {
-              return <CardFilme item={filme} />;
+              return <CardFilme filme={item} />;
             }} // renderização do item
           />
         </View>
