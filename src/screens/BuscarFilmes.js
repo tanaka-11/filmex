@@ -31,7 +31,7 @@ export default function BuscarFilmes({ navigation }) {
       );
     }
 
-    // Redirecionando para a tela de resultados com o filme que foi digitado atraves da props "navigation" e uso do state passado como um objeto onde o filme fica armazenado.
+    // Redirecionando para a tela de resultados com o filme que foi digitado atraves da props "navigation" e uso do segundo parametri passado como um objeto onde o filme fica armazenado.
     navigation.navigate("Resultados", { filme });
   };
 

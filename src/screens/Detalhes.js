@@ -8,21 +8,49 @@ import {
 import SafeContainer from "../components/SafeContainer";
 import fotoAlternativa from "../../assets/images/foto-alternativa.jpg";
 
-export default function Detalhes() {
+export default function Detalhes({ route }) {
+  // Extraindo dados com desestruturação
+  const { filme } = route.params;
+  const {
+    title,
+    release_date,
+    overview,
+    vote_average: avaliacao,
+    backdrop_path,
+  } = filme;
+
+  // Formatando data
+  const formataData = () => {
+    return new Date(release_date).toLocaleDateString("pt-BR");
+  };
+
   return (
     <SafeContainer>
       <View style={estilos.subContainer}>
-        <ImageBackground style={estilos.imagemFundo} source={fotoAlternativa}>
-          <Text style={estilos.titulo}>Nome do Filme</Text>
+        <ImageBackground
+          style={estilos.imagemFundo}
+          source={
+            backdrop_path
+              ? { uri: `https://image.tmdb.org/t/p/original/${backdrop_path}` }
+              : fotoAlternativa
+          }
+        >
+          <Text style={estilos.titulo}>{title}</Text>
         </ImageBackground>
 
         <View style={estilos.conteudo}>
           <ScrollView>
-            <Text style={estilos.textoDestaque}>Avaliação</Text>
-            <Text style={[estilos.textoDestaque, estilos.lancamento]}>
-              Lançamento
+            <Text style={estilos.textoDestaque}>
+              Avaliação:
+              <Text style={estilos.texto}>{avaliacao.toFixed(1)}</Text>
             </Text>
-            <Text style={estilos.textoDestaque}>Descrição</Text>
+            <Text style={[estilos.textoDestaque, estilos.lancamento]}>
+              Lançamento:
+              <Text style={estilos.texto}>{formataData(release_date)}</Text>
+            </Text>
+            <Text style={estilos.textoDestaque}>
+              Sinopse: <Text style={estilos.texto}>{overview}</Text>
+            </Text>
           </ScrollView>
         </View>
 
