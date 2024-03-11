@@ -78,3 +78,8 @@ No `App.js` fizemos a importação do `NavigationContainer` e `createNativeStack
 - Criação do componente `CardFilme` com uso da props (`filme`) com carregamento do `title` e do `poster_path` (imagem) com condicional (se existe ou não a imagem) de cada filme
 - Loading usando `ActivityIndicator`
 - Em `Resultados`, aplicamos na `FlatList` componentes personalizador em caso de não haver filmes na busca (`ListaVazia/ListEmptyComponent`) e (`Separador/ItemSeparatorComponent`) para separar cada elemento da `FlatList`
+
+## Tela de Detalhes do filme
+
+- Adição dela ap `Stack` em `App.js`
+- Em `CardFilme`, utilizamos o hook `useNavigation` para a funcionalidade do botão **Leia Mais** (Navegação de tela para componente)
