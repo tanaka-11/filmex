@@ -1,10 +1,4 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  FlatList,
-  ActivityIndicator,
-} from "react-native";
+import { StyleSheet, Text, View, FlatList } from "react-native";
 import { useEffect, useState } from "react";
 import SafeContainer from "../components/SafeContainer";
 import CardFilme from "../components/CardFilme";
@@ -12,7 +6,6 @@ import Separador from "../components/Separador";
 import ListaVazia from "../components/ListaVazia";
 import Loading from "../components/Loading";
 import { api, apiKey } from "../services/api-moviedb";
-useEffect;
 
 // Utilizando a props nativa "route" da biblioteca de navegação. Utilizada para acessar valores passados por meio de navegação entre telas.
 export default function Resultados({ route }) {
