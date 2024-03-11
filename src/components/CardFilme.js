@@ -1,9 +1,13 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import fotoAlternativa from "../../assets/images/foto-alternativa.jpg";
+import { useNavigation } from "@react-navigation/native"; // Hook para navegação entre (componentes e telas)
 
 export default function CardFilme({ filme }) {
   // Extraindo dados
   const { title, poster_path } = filme;
+
+  // Recursos de navegação
+  const navigation = useNavigation();
 
   return (
     <View style={estilos.card}>
@@ -21,7 +25,10 @@ export default function CardFilme({ filme }) {
         <Text style={estilos.titulo}>{title}</Text>
 
         <View style={estilos.botoes}>
-          <Pressable style={estilos.botao}>
+          <Pressable
+            style={estilos.botao}
+            onPress={() => navigation.navigate("Detalhes")}
+          >
             <Text style={estilos.textoBotao}>Leia Mais</Text>
           </Pressable>
 
