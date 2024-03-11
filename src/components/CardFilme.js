@@ -8,9 +8,13 @@ export default function CardFilme({ filme }) {
   return (
     <View style={estilos.card}>
       <Image
-        resizeMode="contain"
         style={estilos.imagem}
-        source={{ uri: `https://image.tmdb.org/t/p/w500/${poster_path}` }}
+        resizeMode="stretch"
+        source={
+          poster_path
+            ? { uri: `https://image.tmdb.org/t/p/w500/${poster_path}` }
+            : fotoAlternativa
+        } // Condicional da foto de poster
       />
 
       <View style={estilos.corpo}>
@@ -57,7 +61,7 @@ const estilos = StyleSheet.create({
   },
 
   imagem: {
-    height: 150,
+    height: 200,
     width: 150,
   },
 
