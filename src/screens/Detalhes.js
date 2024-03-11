@@ -20,9 +20,13 @@ export default function Detalhes({ route }) {
   } = filme;
 
   // Formatando data
-  const formataData = () => {
-    return new Date(release_date).toLocaleDateString("pt-BR");
+  const formataData = (data) => {
+    const [ano, mes, dia] = data.split("-");
+    return `${dia}/${mes}/${ano}`;
   };
+  //   const formataData = () => {
+  //     return new Date(release_date).toLocaleDateString("pt-BR");
+  //   }; - Pode ocorrer erro em aplicativos
 
   return (
     <SafeContainer>
@@ -41,15 +45,22 @@ export default function Detalhes({ route }) {
         <View style={estilos.conteudo}>
           <ScrollView>
             <Text style={estilos.textoDestaque}>
-              Avaliação:
+              Avaliação:{" "}
               <Text style={estilos.texto}>{avaliacao.toFixed(1)}</Text>
             </Text>
             <Text style={[estilos.textoDestaque, estilos.lancamento]}>
-              Lançamento:
-              <Text style={estilos.texto}>{formataData(release_date)}</Text>
+              Lançamento:{" "}
+              <Text style={estilos.texto}>
+                {release_date ? formataData(release_date) : "Indisponível"}
+              </Text>
             </Text>
             <Text style={estilos.textoDestaque}>
-              Sinopse: <Text style={estilos.texto}>{overview}</Text>
+              Sinopse:{" "}
+              <Text style={estilos.texto}>
+                {overview || (
+                  <Text style={estilos.texto}>Filme sem sinopse</Text>
+                )}
+              </Text>
             </Text>
           </ScrollView>
         </View>
