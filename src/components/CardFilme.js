@@ -35,7 +35,7 @@ export default function CardFilme({ filme }) {
 
       // Aviso para o usuario caso o filme ja esteja na lista
       if (jaTemFilme) {
-        Alert.alert("Ops", "Filme já esta salvo em sua lista");
+        Alert.alert("Ops!", "Filme já esta salvo em sua lista");
         Vibration.vibrate(300);
         return;
       }
