@@ -1,4 +1,4 @@
-import { StatusBar } from "react-native"; // Barra de Status do celular
+import { Button, Pressable, StatusBar, StyleSheet, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native"; // Biblioteca de navegação
 import { createNativeStackNavigator } from "@react-navigation/native-stack"; // Método de navegação
 
@@ -50,9 +50,39 @@ export default function App() {
 
           <Stack.Screen name="Resultados" component={Resultados} />
 
-          <Stack.Screen name="Detalhes" component={Detalhes} />
+          <Stack.Screen
+            name="Detalhes"
+            component={Detalhes}
+            options={({ navigation }) => {
+              return {
+                headerRight: () => (
+                  <Pressable
+                    style={estilos.botaoHome}
+                    onPress={() => {
+                      navigation.navigate("Home");
+                    }}
+                  >
+                    <Text style={estilos.textoBotao}>Home</Text>
+                  </Pressable>
+                ),
+              };
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>
   );
 }
+
+const estilos = StyleSheet.create({
+  botaoHome: {
+    borderColor: "#db0000",
+    borderWidth: 2,
+    padding: 6,
+    borderRadius: 6,
+  },
+  textoBotao: {
+    color: "#db0000",
+    fontWeight: "bold",
+  },
+});
