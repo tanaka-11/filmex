@@ -81,5 +81,6 @@ No `App.js` fizemos a importação do `NavigationContainer` e `createNativeStack
 
 ## Tela de Detalhes do filme
 
-- Adição dela ap `Stack` em `App.js`
+- Adição dela ao `Stack` em `App.js`
 - Em `CardFilme`, utilizamos o hook `useNavigation` para a funcionalidade do botão **Leia Mais** (Navegação de tela para componente)
+- Dentro da sua `Stack`, adicionamos a props `options` configurada com um `Pressable` responsável por permitir a navegação direta para a tela `Home`
