@@ -84,3 +84,7 @@ No `App.js` fizemos a importação do `NavigationContainer` e `createNativeStack
 - Adição dela ao `Stack` em `App.js`
 - Em `CardFilme`, utilizamos o hook `useNavigation` para a funcionalidade do botão **Leia Mais** (Navegação de tela para componente)
 - Dentro da sua `Stack`, adicionamos a props `options` configurada com um `Pressable` responsável por permitir a navegação direta para a tela `Home`
+
+## Tela de Favoritos
+
+- Utilizamos uma lib do Expo chamada `AsyncStorage` que nos permite armazenar dados **offline** em formato `string` no dispositivo do usuário.
