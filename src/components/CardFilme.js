@@ -1,4 +1,4 @@
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { Alert, Image, Pressable, StyleSheet, Text, View } from "react-native";
 import fotoAlternativa from "../../assets/images/foto-alternativa.jpg";
 import { useNavigation } from "@react-navigation/native"; // Hook para navegação entre (componentes e telas)
 
@@ -8,6 +8,11 @@ export default function CardFilme({ filme }) {
 
   // Recursos de navegação
   const navigation = useNavigation();
+
+  // Função de aoSalvarFavorito com a lib AsyncStorage
+  const aoSalvarFavorito = async () => {
+    Alert.alert("Filme", "🥶");
+  };
 
   return (
     <View style={estilos.card}>
@@ -32,7 +37,7 @@ export default function CardFilme({ filme }) {
             <Text style={estilos.textoBotao}>Leia Mais</Text>
           </Pressable>
 
-          <Pressable style={estilos.botao}>
+          <Pressable style={estilos.botao} onPress={aoSalvarFavorito}>
             <Text style={estilos.textoBotao}>Salvar</Text>
           </Pressable>
         </View>
