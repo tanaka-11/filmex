@@ -4,7 +4,7 @@ import { useNavigation } from "@react-navigation/native"; // Hook para navegaç�
 import AsyncStorage from "@react-native-async-storage/async-storage"; // Lib de armazenagem de dados offline
 
 export default function CardFilme({ filme }) {
-  // Extraindo dados
+  // Extraindo dados da api
   const { title, poster_path } = filme;
 
   // Recursos de navegação
@@ -15,6 +15,7 @@ export default function CardFilme({ filme }) {
     // Alert.alert("Filme favoritado com sucesso!");
     try {
       const filmesFavoritos = await AsyncStorage.getItem("@favoritosFilmex"); // Verficação de favoritos armazenados no AsyncStorage atraves do getItem guardando-os no "filmeFavoritos"
+      const listaDeFilmes = filmesFavoritos ? JSON.parse(filmesFavoritos) : []; // Condicional que converte a string de dados em objeto atraves do JSON.parse
     } catch (error) {
       console.log("Erro: " + error);
       Alert.alert("Erro ao favoritar filme", "Tente novamente");
