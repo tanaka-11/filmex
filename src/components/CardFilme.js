@@ -15,7 +15,10 @@ export default function CardFilme({ filme }) {
     // Alert.alert("Filme favoritado com sucesso!");
     try {
       const filmesFavoritos = await AsyncStorage.getItem("@favoritosFilmex"); // Verficação de favoritos armazenados no AsyncStorage atraves do getItem guardando-os no "filmeFavoritos"
+
       const listaDeFilmes = filmesFavoritos ? JSON.parse(filmesFavoritos) : []; // Condicional que converte a string de dados em objeto atraves do JSON.parse
+
+      const jaTemFilme = listaDeFilmes.some((filmeNaLista) => {}); // Verificação se o filme já esta salvo
     } catch (error) {
       console.log("Erro: " + error);
       Alert.alert("Erro ao favoritar filme", "Tente novamente");
