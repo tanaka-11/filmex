@@ -9,6 +9,7 @@ import {
 import { useEffect, useState } from "react";
 import SafeContainer from "../components/SafeContainer";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function Favoritos() {
   // State para registrar os dados carregados no storage
@@ -37,7 +38,38 @@ export default function Favoritos() {
     <SafeContainer>
       <View style={estilos.subContainer}>
         <View style={estilos.viewFavoritos}>
-          <Text style={estilos.texto}>Favoritos</Text>
+          <Text style={estilos.texto}>
+            <Text style={estilos.textoDestaque}>Quantidade: </Text>
+            {listaFavoritos.length}
+          </Text>
+
+          <Pressable style={estilos.botaoExcluirFavorito}>
+            <Text style={estilos.textoBotao}>
+              <Ionicons name="trash" size={10} /> Excluir Favoritos
+            </Text>
+          </Pressable>
+        </View>
+
+        <ScrollView>
+          {listaFavoritos.map((filme) => {
+            return (
+              <View key={filme.id} style={estilos.item}>
+                <Pressable style={estilos.botaoFilme}>
+                  <Text style={estilos.titulo}>{filme.title}</Text>
+                </Pressable>
+
+                <Pressable style={estilos.botaoExcluir}>
+                  <Text style={estilos.textoDestaque}>
+                    <Ionicons name="trash" size={20} />
+                  </Text>
+                </Pressable>
+              </View>
+            );
+          })}
+        </ScrollView>
+
+        <View style={estilos.rodape}>
+          <Text style={estilos.textoRodape}>FILMEX &copy; 2024</Text>
         </View>
       </View>
     </SafeContainer>
@@ -51,19 +83,46 @@ const estilos = StyleSheet.create({
     width: "100%",
   },
 
-  viewFavoritos: {},
+  viewFavoritos: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+
+  item: {
+    flexDirection: "row",
+  },
+
+  titulo: {
+    color: "#FFF",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
 
   texto: {
     color: "#FFF",
     padding: 10,
   },
 
-  textoDestaque: {},
+  textoDestaque: {
+    color: "#db0000",
+  },
 
   textoRodape: {
     color: "#db0000",
     fontWeight: "bold",
     textAlign: "center",
     marginVertical: 20,
+  },
+
+  textoBotao: {
+    color: "#fff",
+  },
+
+  botaoExcluirFavorito: {
+    borderWidth: 2,
+    borderColor: "#db0000",
+    padding: 6,
+    borderRadius: 6,
   },
 });
