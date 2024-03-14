@@ -1,4 +1,12 @@
-import { Alert, Image, Pressable, StyleSheet, Text, View } from "react-native";
+import {
+  Alert,
+  Image,
+  Pressable,
+  StyleSheet,
+  Text,
+  Vibration,
+  View,
+} from "react-native";
 import fotoAlternativa from "../../assets/images/foto-alternativa.jpg";
 import { useNavigation } from "@react-navigation/native"; // Hook para navegação entre (componentes e telas)
 import AsyncStorage from "@react-native-async-storage/async-storage"; // Lib de armazenagem de dados offline
@@ -25,7 +33,14 @@ export default function CardFilme({ filme }) {
         return filmeNaLista.id == filme.id;
       });
 
-      //
+      // Aviso para o usuario caso o filme ja esteja na lista
+      if (jaTemFilme) {
+        Alert.alert("Ops", "Filme já esta salvo em sua lista");
+        Vibration.vibrate(300);
+        return;
+      }
+
+      // Adicionando filme na lista de favoritos
     } catch (error) {
       console.log("Erro: " + error);
       Alert.alert("Erro ao favoritar filme", "Tente novamente");
