@@ -20,7 +20,7 @@ export default function CardFilme({ filme }) {
 
   // Função de aoSalvarFavorito com a lib AsyncStorage
   const aoSalvarFavorito = async () => {
-    // Alert.alert("Filme favoritado com sucesso!");
+    //
     try {
       // Verficação de favoritos armazenados no AsyncStorage atraves do getItem guardando-os no "filmeFavoritos"
       const filmesFavoritos = await AsyncStorage.getItem("@favoritosFilmex");
@@ -41,6 +41,16 @@ export default function CardFilme({ filme }) {
       }
 
       // Adicionando filme na lista de favoritos
+      listaDeFilmes.push(filme);
+
+      // Convertendo o array listaDeFilmes em string
+      await AsyncStorage.setItem(
+        "@favoritosFilmex",
+        JSON.stringify(listaDeFilmes)
+      );
+
+      // Alert de operação bem sucedida
+      Alert.alert(`${title}`, "Filme favoritado com sucesso!");
     } catch (error) {
       console.log("Erro: " + error);
       Alert.alert("Erro ao favoritar filme", "Tente novamente");
