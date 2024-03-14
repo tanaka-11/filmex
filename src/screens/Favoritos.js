@@ -18,10 +18,10 @@ export default function Favoritos() {
   useEffect(() => {
     const carregarFavoritos = async () => {
       try {
-        // Recuperando os dados no asyncstorage
+        // Recuperando os dados em formato string do asyncstorage
         const dados = await AsyncStorage.getItem("@favoritosFilmex");
 
-        // Convertendo dados em objeto e os guardando no state
+        // Convertendo dados em objeto com JSON.parse e os guardando no state
         if (dados) {
           setlistaFavoritos(JSON.parse(dados));
         }
@@ -33,7 +33,6 @@ export default function Favoritos() {
     carregarFavoritos();
   }, []);
 
-  console.log(listaFavoritos);
   return (
     <SafeContainer>
       <View style={estilos.subContainer}>
