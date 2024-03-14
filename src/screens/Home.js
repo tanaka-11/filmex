@@ -37,7 +37,10 @@ export default function Home({ navigation }) {
           </Text>
         </Pressable>
 
-        <Pressable style={estilos.botao}>
+        <Pressable
+          style={estilos.botao}
+          onPress={() => navigation.navigate("Favoritos")}
+        >
           <Text style={estilos.textoBotao}>
             <Ionicons name="star" size={10} color="gold" /> Favoritos
           </Text>
