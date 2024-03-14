@@ -1,6 +1,7 @@
 import { Alert, Image, Pressable, StyleSheet, Text, View } from "react-native";
 import fotoAlternativa from "../../assets/images/foto-alternativa.jpg";
 import { useNavigation } from "@react-navigation/native"; // Hook para navegação entre (componentes e telas)
+import AsyncStorage from "@react-native-async-storage/async-storage"; // Lib de armazenagem de dados offline
 
 export default function CardFilme({ filme }) {
   // Extraindo dados
@@ -11,7 +12,13 @@ export default function CardFilme({ filme }) {
 
   // Função de aoSalvarFavorito com a lib AsyncStorage
   const aoSalvarFavorito = async () => {
-    Alert.alert("Filme", "🥶");
+    // Alert.alert("Filme favoritado com sucesso!");
+    try {
+      const filmesFavoritos = await AsyncStorage.getItem("@favoritosFilmex"); // Verficação de favoritos armazenados no AsyncStorage atraves do getItem guardando-os no "filmeFavoritos"
+    } catch (error) {
+      console.log("Erro: " + error);
+      Alert.alert("Erro ao favoritar filme", "Tente novamente");
+    }
   };
 
   return (
