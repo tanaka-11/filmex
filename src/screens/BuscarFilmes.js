@@ -85,6 +85,7 @@ const estilos = StyleSheet.create({
     margin: 10,
     width: 250,
     textAlign: "center",
+    borderRadius: 3,
   },
 
   buscador: {
