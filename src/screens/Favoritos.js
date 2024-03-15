@@ -59,7 +59,37 @@ export default function Favoritos({ navigation }) {
   };
 
   // Função para excluir UM favorito
-  const excluirUmFavorito = async () => {};
+  const excluirUmFavorito = (filmeId) => {
+    Alert.alert("Excluir?", "Quer mesmo excluir esse filme dos favoritos?", [
+      {
+        text: "Excluir",
+        style: "destructive",
+        onPress: async () => {
+          try {
+            // Filtrar a lista de favoritos removendo o filme com o ID correspondente
+            const novaListaFavoritos = listaFavoritos.filter(
+              (filme) => filme.id !== filmeId
+            );
+
+            await AsyncStorage.setItem(
+              "@favoritosFilmex",
+              JSON.stringify(novaListaFavoritos)
+            );
+
+            setlistaFavoritos(novaListaFavoritos);
+
+            Vibration.vibrate();
+          } catch (error) {
+            console.error("Erro ao excluir o filme:", error);
+          }
+        },
+      },
+      {
+        text: "Cancelar",
+        style: "cancel",
+      },
+    ]);
+  };
 
   return (
     <SafeContainer>
@@ -70,7 +100,7 @@ export default function Favoritos({ navigation }) {
             {listaFavoritos.length}
           </Text>
 
-          {listaFavoritos.length ? (
+          {listaFavoritos.length > 0 && (
             <Pressable
               onPress={excluirTodosFavoritos}
               style={estilos.botaoExcluirFavorito}
@@ -79,7 +109,7 @@ export default function Favoritos({ navigation }) {
                 <Ionicons name="trash" size={10} /> Excluir Favoritos
               </Text>
             </Pressable>
-          ) : null}
+          )}
         </View>
 
         <ScrollView>
@@ -96,7 +126,7 @@ export default function Favoritos({ navigation }) {
                 </Pressable>
 
                 <Pressable
-                  onPress={excluirUmFavorito}
+                  onPress={() => excluirUmFavorito(filme.id)}
                   style={estilos.botaoExcluir}
                 >
                   <Text style={estilos.textoDestaque}>
