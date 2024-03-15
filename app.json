@@ -11,7 +11,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#000"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -19,8 +21,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/logo.png",
         "backgroundColor": "#000"
+      },
+      "package": "com.tanaka11.filmex"
+    },
+    "plugins": [
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "63baf2e7-4ed4-4b1a-8446-d61a5f190968"
       }
     },
-    "plugins": ["expo-font"]
+    "owner": "tanaka-11"
   }
 }

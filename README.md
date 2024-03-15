@@ -88,3 +88,22 @@ No `App.js` fizemos a importação do `NavigationContainer` e `createNativeStack
 ## Tela de Favoritos
 
 - Utilizamos uma lib do Expo chamada `AsyncStorage` que nos permite armazenar dados **offline** em formato `string` no dispositivo do usuário.
+
+## Roteiro geral para o Build com o Expo com CLI do Node
+
+1. Acessar a conta Expo e criar um projeto no Expo EAS `https://expo.dev/accounts/tanaka-11/projects`
+2. Instalar o eas-cli
+3. Adicionar o id do projeto ao aplicativo
+4. Verificar conta logada `eas whoami` caso não esteja logado `eas login` ou quiser deslogar `eas logout`
+5. Configurar o build (compilação): `eas build:configure` e escolha a opção `android`
+6. Ajustar o arquivo gerado `eas.json`, modificar o `preview` com o codigo abaixo
+
+```json
+"developmentClient" : true,
+    "android" : {
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleRelease"
+    },
+```
+
+7. Iniciar o processo de build `eas build --profile preview`
