@@ -43,7 +43,12 @@ export default function Favoritos({ navigation }) {
       [
         {
           text: "Excluir",
-          style: "destructive",
+          style: "destructive", // propriedade style somente IOS
+          onPress: async () => {
+            await AsyncStorage.removeItem("@favoritosFilmex");
+            setlistaFavoritos([]);
+            Vibration.vibrate();
+          }, // removendo itens e atualizando o state
         },
         {
           text: "Cancelar",
