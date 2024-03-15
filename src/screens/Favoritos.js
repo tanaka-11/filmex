@@ -60,7 +60,7 @@ export default function Favoritos({ navigation }) {
 
   // Função para excluir UM favorito
   const excluirUmFavorito = (filmeId) => {
-    Alert.alert("Excluir?", "Quer mesmo excluir esse filme dos favoritos?", [
+    Alert.alert("Excluir", "Quer mesmo excluir esse filme dos favoritos?", [
       {
         text: "Excluir",
         style: "destructive",
@@ -68,14 +68,16 @@ export default function Favoritos({ navigation }) {
           try {
             // Filtrar a lista de favoritos removendo o filme com o ID correspondente
             const novaListaFavoritos = listaFavoritos.filter(
-              (filme) => filme.id !== filmeId
+              (filmeDaLista) => filmeDaLista.id !== filmeId
             );
 
+            // Atualizando dados do storage(memoria fisica) com os dados da nova lista
             await AsyncStorage.setItem(
               "@favoritosFilmex",
               JSON.stringify(novaListaFavoritos)
             );
 
+            // Chamando nova lista de favoritos com o state(memoria)
             setlistaFavoritos(novaListaFavoritos);
 
             Vibration.vibrate();
