@@ -20,7 +20,7 @@ export default function Favoritos({ navigation }) {
   useEffect(() => {
     const carregarFavoritos = async () => {
       try {
-        // Recuperando os dados em formato string do asyncstorage
+        // Recuperando os dados em formato string do asyncstorage atraves do "getItem"
         const dados = await AsyncStorage.getItem("@favoritosFilmex");
 
         // Convertendo dados em objeto com JSON.parse e os guardando no state
@@ -35,6 +35,24 @@ export default function Favoritos({ navigation }) {
     carregarFavoritos();
   }, []);
 
+  // Função assincrona de excluir todos os favoritos
+  const excluirTodosFavoritos = async () => {
+    Alert.alert(
+      "Excluir TODOS?",
+      "Quer mesmo excluir TODOS filmes favoritados?",
+      [
+        {
+          text: "Excluir",
+          style: "destructive",
+        },
+        {
+          text: "Cancelar",
+          style: "cancel",
+        },
+      ]
+    ); // Passado 3º parametro como um array com um objeto para texto do alert
+  };
+
   return (
     <SafeContainer>
       <View style={estilos.subContainer}>
@@ -44,7 +62,10 @@ export default function Favoritos({ navigation }) {
             {listaFavoritos.length}
           </Text>
 
-          <Pressable style={estilos.botaoExcluirFavorito}>
+          <Pressable
+            onPress={excluirTodosFavoritos}
+            style={estilos.botaoExcluirFavorito}
+          >
             <Text style={estilos.textoBotao}>
               <Ionicons name="trash" size={10} /> Excluir Favoritos
             </Text>
