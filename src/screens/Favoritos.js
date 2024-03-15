@@ -87,10 +87,20 @@ const estilos = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    padding: 10,
+    marginBottom: 20,
+    borderRadius: 6,
+    borderColor: "#db0000",
+    borderWidth: 1.5,
   },
 
   item: {
     flexDirection: "row",
+    justifyContent: "space-between",
+    padding: 10,
+    margin: 10,
+    backgroundColor: "#242424",
+    borderRadius: 6,
   },
 
   titulo: {
@@ -102,6 +112,7 @@ const estilos = StyleSheet.create({
   texto: {
     color: "#FFF",
     padding: 10,
+    fontSize: 16,
   },
 
   textoDestaque: {
@@ -116,12 +127,11 @@ const estilos = StyleSheet.create({
   },
 
   textoBotao: {
-    color: "#fff",
+    color: "#FFF",
   },
 
   botaoExcluirFavorito: {
-    borderWidth: 2,
-    borderColor: "#db0000",
+    backgroundColor: "#db0000",
     padding: 6,
     borderRadius: 6,
   },
