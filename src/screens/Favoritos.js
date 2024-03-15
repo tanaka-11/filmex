@@ -96,8 +96,9 @@ const estilos = StyleSheet.create({
 
   item: {
     flexDirection: "row",
+    alignItems: "center",
     justifyContent: "space-between",
-    padding: 16,
+    padding: 20,
     margin: 10,
     backgroundColor: "#242424",
     borderRadius: 6,
@@ -132,7 +133,7 @@ const estilos = StyleSheet.create({
 
   botaoExcluirFavorito: {
     backgroundColor: "#db0000",
-    padding: 8,
+    padding: 10,
     borderRadius: 6,
   },
 });
