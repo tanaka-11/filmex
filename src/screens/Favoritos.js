@@ -91,13 +91,13 @@ const estilos = StyleSheet.create({
     marginBottom: 20,
     borderRadius: 6,
     borderColor: "#db0000",
-    borderWidth: 1.5,
+    borderWidth: 0.75,
   },
 
   item: {
     flexDirection: "row",
     justifyContent: "space-between",
-    padding: 10,
+    padding: 20,
     margin: 10,
     backgroundColor: "#242424",
     borderRadius: 6,
