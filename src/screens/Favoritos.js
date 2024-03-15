@@ -91,7 +91,7 @@ const estilos = StyleSheet.create({
     marginBottom: 20,
     borderRadius: 6,
     borderColor: "#db0000",
-    borderWidth: 0.75,
+    borderWidth: 0.85,
   },
 
   item: {
