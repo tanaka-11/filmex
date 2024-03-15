@@ -58,6 +58,9 @@ export default function Favoritos({ navigation }) {
     ); // Passado 3º parametro como um array com um objeto para texto do alert
   };
 
+  // Função para excluir UM favorito
+  const excluirUmFavorito = async () => {};
+
   return (
     <SafeContainer>
       <View style={estilos.subContainer}>
@@ -67,14 +70,16 @@ export default function Favoritos({ navigation }) {
             {listaFavoritos.length}
           </Text>
 
-          <Pressable
-            onPress={excluirTodosFavoritos}
-            style={estilos.botaoExcluirFavorito}
-          >
-            <Text style={estilos.textoBotao}>
-              <Ionicons name="trash" size={10} /> Excluir Favoritos
-            </Text>
-          </Pressable>
+          {listaFavoritos.length ? (
+            <Pressable
+              onPress={excluirTodosFavoritos}
+              style={estilos.botaoExcluirFavorito}
+            >
+              <Text style={estilos.textoBotao}>
+                <Ionicons name="trash" size={10} /> Excluir Favoritos
+              </Text>
+            </Pressable>
+          ) : null}
         </View>
 
         <ScrollView>
@@ -90,7 +95,10 @@ export default function Favoritos({ navigation }) {
                   <Text style={estilos.titulo}>{filme.title}</Text>
                 </Pressable>
 
-                <Pressable style={estilos.botaoExcluir}>
+                <Pressable
+                  onPress={excluirUmFavorito}
+                  style={estilos.botaoExcluir}
+                >
                   <Text style={estilos.textoDestaque}>
                     <Ionicons name="trash" size={20} />
                   </Text>
