@@ -100,10 +100,15 @@ No `App.js` fizemos a importação do `NavigationContainer` e `createNativeStack
 
 ```json
 "developmentClient" : true,
-    "android" : {
+    "android": {
         "buildType": "apk",
         "gradleCommand": ":app:assembleRelease"
-    },
+      }, // Transformando em apk
+      "env": {
+        "EXPO_PUBLIC_API_KEY": "sua_api_key"
+      } // API_KEY
 ```
 
-7. Iniciar o processo de build `eas build --profile preview`
+8. Analisar os pacotes do projeto e os possiveis problemas `npx -y expo-doctor`
+
+9. Iniciar o processo de build `eas build --profile preview`
